@@ -39,16 +39,7 @@ const myData: MyImages = {
 
 function ImageSlider() {
     return (
-        <Swiper slidesPerView={3} 
-        className="md:grid md:grid-cols-3 lg:grid-cols-3"
-      breakpoints={{
-        640: {
-          slidesPerView: 3,
-        },
-        768: {
-          slidesPerView: 1,
-        },
-      }}>
+        <Swiper slidesPerView={3} className="md:grid md:grid-cols-3 lg:grid-cols-3"breakpoints={{640: {slidesPerView: 3,},768: {slidesPerView: 3,},}}>
             <SwiperSlide className=''>
                 <Image src={myData.Image1} alt='product' height={"400"} width={"400"}/>
             </SwiperSlide>
@@ -87,36 +78,12 @@ function ImageSlider() {
 }
 
 export default function Products() {
-
     return (
         <div className='w-full mx-auto max-w-sm md:px-0 px-4 md:max-w-7xl py-20'>
             <p className='text-center text-sm text-blue-500 font-semibold'>PRODUCTS</p>
             <h1 className='text-center text-4xl font-bold py-4 leading-tight'>Our Products</h1>
-            <div id="myCarousel" className="">
+            <div id="myCarousel" className="pt-14">
                 <ImageSlider/>
-                {/* <div className="carousel carousel-center rounded-box">
-                    <div className="carousel-item">
-                        <Image src={"/modelFemale1.webp"} alt='product image' height={"200"} width={"200"} ></Image>
-                    </div>
-                    <div className="carousel-item">
-                        <Image src={"/modelFemale2.png"} alt='product image' height={"200"} width={"200"} ></Image>
-                    </div>
-                    <div className="carousel-item">
-                        <Image src={"/modelFemale3.png"} alt='product image' height={"200"} width={"200"} ></Image>
-                    </div>
-                    <div className="carousel-item">
-                        <Image src={"/modelFemale4.png"} alt='product image' height={"200"} width={"200"} ></Image>
-                    </div>
-                    <div className="carousel-item">
-                        <Image src={"/modelFemale5.png"} alt='product image' height={"200"} width={"200"} ></Image>
-                    </div>
-                    <div className="carousel-item">
-                        <Image src={"/modelFemale6.png"} alt='product image' height={"200"} width={"200"} ></Image>
-                    </div>
-                    <div className="carousel-item">
-                        <Image src={"/modelFemale7.png"} alt='product image' height={"200"} width={"200"} ></Image>
-                    </div>
-                </div> */}
             </div>
 
         </div>
