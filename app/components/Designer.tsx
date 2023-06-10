@@ -31,7 +31,7 @@ export default function Designer() {
         </h1>
         <div className='flex gap-6 items-center justify-center'>
           <Image src='/modelFemale12.webp' alt='image model' height='250' width='250' />
-          <div className='flex justify-center gap-5 flex-col items-center'>
+          <div className='flex justify-center gap-10 flex-col items-start'>
             <p>This piece is ethically crafted in our<br /> small family-owned workshop in Peru<br /> with unmatched attention to detail<br /> and care. The Natural color is the<br /> actual natural color of the fiber,<br /> undyed and 100% traceable.</p>
             <button className='py-2 px-4 bg-[#212121] border-2 text-white border-[#545454]'>See All Products</button>
           </div>
