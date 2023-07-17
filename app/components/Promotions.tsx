@@ -7,7 +7,7 @@ export default function Promotions() {
             <p className='text-center text-sm text-blue-500 font-semibold'>PROMOTIONS</p>
             <h1 className='text-center text-4xl font-bold py-4 leading-tight'>Our Promotions Events</h1>
             <div className='grid mt-5 grid-cols-1 md:grid-cols-4 gap-8'>
-                <div className='md:col-span-2 flex md:flex-col justify-between'>
+                <div className='md:col-span-2 flex flex-col gap-4 lg:gap-0 md:flex-col justify-between'>
                     <div className='bg-[#d6d6d8] md:pl-7 w-full md:h-48 h-72 flex pt-8 md:pt-2 flex-col md:flex-row items-center justify-between gap-1 md:gap-0'>
                         <div className=''>
                             <h1 className='text-3xl font-bold'>GET UP TO <span className='text-[38px]'> 60%</span></h1>
@@ -17,7 +17,7 @@ export default function Promotions() {
                             <Image width={"240"} height={"240"} alt='model picture 1' src={"/modelFemale1.webp"} />
                         </div>
                     </div>
-                    <div className='w-full h-44 md:h-48 pt-5 md:pt-9 flex flex-col gap-7 md:gap-5 items-center bg-[#212121]'>
+                    <div className='w-full bg-[#212121] h-44 md:h-48 pt-5 md:pt-9 flex flex-col gap-7 md:gap-5 items-center '>
                         <h1 className='text-4xl font-bold text-white'>GET 30% OFF</h1>
                         <div className=''>
                             <h4 className='text-md pb-1 text-center text-white'>USE PROMO CODE</h4>
