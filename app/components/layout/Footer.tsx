@@ -15,8 +15,8 @@ export default function Footer() {
                         <Link href='/'><FaLinkedinIn size={"40"} className='rounded-md border-[11px] bg-[#f1f1f1] border-[#f1f1f1] ' /></Link>
                     </div>
                 </div>
-                <div className='grid grid-cols-3 gap-32'>
-                    <ul className='flex flex-col gap-4'>
+                <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-7'>
+                    <ul className='flex flex-col gap-4 px-7'>
                         <h2 className='text-[#666666] text-[18px] py-1 font-bold'>Company</h2>
                         <li className='text-[#666666]'><Link href='/'>About</Link></li>
                         <li className='text-[#666666]'><Link href='/'>Terms of Use</Link></li>
@@ -24,13 +24,13 @@ export default function Footer() {
                         <li className='text-[#666666]'><Link href='/'>How it Works</Link></li>
                         <li className='text-[#666666]'><Link href='/'>Contact Us</Link></li>
                     </ul>
-                    <ul className='flex flex-col gap-4'>
+                    <ul className='flex flex-col gap-4 px-7'>
                         <h2 className='text-[#666666] text-[18px] py-1 font-bold'>Support</h2>
                         <li className='text-[#666666]'><Link href='/'>Support Carrer</Link></li>
                         <li className='text-[#666666]'><Link href='/'>24h Service</Link></li>
                         <li className='text-[#666666]'><Link href='/'>Quick Chat</Link></li>
                     </ul>
-                    <ul className='flex flex-col gap-4'>
+                    <ul className='flex flex-col gap-4 px-7'>
                         <h2 className='text-[#666666] text-[18px] py-1 font-bold'>Contact</h2>
                         <li className='text-[#666666]'><Link href='/'>Whatsapp</Link></li>
                         <li className='text-[#666666]'><Link href='/'>Support 24h</Link></li>

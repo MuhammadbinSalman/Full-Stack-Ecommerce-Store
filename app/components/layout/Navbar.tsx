@@ -34,16 +34,16 @@ function Links() {
     return (
         <ul className="flex-col md:flex-row md:pt-0 pt-0 text-gray-950 flex justify-between  gap-3 md:gap-12 lg:gap-5 xl:gap-12">
             <li>
-                <Link href="/Female" className="nav-link text-lg md:text-lg lg:text-base">Female</Link>
+                <Link href="/Female" className="nav-link text-lg md:text-lg lg:text-base xl:text-lg">Female</Link>
             </li>
             <li>
-                <Link href="/Male" className="nav-link text-lg md:text-lg lg:text-base">Male</Link>
+                <Link href="/Male" className="nav-link text-lg md:text-lg lg:text-base xl:text-lg">Male</Link>
             </li>
             <li>
-                <Link href="/Kids" className="nav-link text-lg md:text-lg lg:text-base">Kids</Link>
+                <Link href="/Kids" className="nav-link text-lg md:text-lg lg:text-base xl:text-lg">Kids</Link>
             </li>
             <li>
-                <Link href="/AllProducts" className="nav-link text-lg md:text-lg lg:text-base whitespace-nowrap">All Products</Link>
+                <Link href="/AllProducts" className="nav-link text-lg md:text-lg lg:text-base whitespace-nowrap xl:text-lg">All Products</Link>
             </li>
         </ul>
     )
@@ -51,9 +51,9 @@ function Links() {
 
 export default function Navbar() {
     return (
-        <nav className="flex w-full mx-auto bg-slate-200 max-w-sm md:px-4 px-4 md:max-w-7xl justify-between py-7 md:py-9 items-center">
+        <nav className="flex w-full mx-auto max-w-sm md:px-9 xl:px-4 px-4 md:max-w-7xl justify-between py-7 md:py-9 items-center">
             {/* left portion */}
-            <div className='flex flex-grow bg-gray-50 justify-between lg:max-w-lg xl:max-w-2xl pr-4'>
+            <div className='flex flex-grow justify-between lg:max-w-lg xl:max-w-2xl pr-4'>
                 <Link href="/" className="navbar-brand">
                     <Image width={"140"} height="140" className='' src="/Logo.webp" alt="Logo" />
                 </Link>
@@ -77,7 +77,7 @@ export default function Navbar() {
                 </Sheet>
 
             </div>
-            <div className='hidden lg:block bg-gray-500'>
+            <div className='hidden lg:block'>
                 <div className='flex justify-center gap-32 lg:gap-14 items-center pr-8 '>
                     <div className="navbar-search">
                         <Navsearch />

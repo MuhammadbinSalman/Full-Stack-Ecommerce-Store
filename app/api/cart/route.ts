@@ -9,9 +9,11 @@ import { eq } from "drizzle-orm";
 export const GET = async (request: NextRequest) => {
     const req = request.nextUrl
     const uid = req.searchParams.get("user_id") as string
+    console.log(uid, "uid yahan")
     try {
         const res = await db.select().from(cartTable).where(eq(cartTable.user_id, uid))
-        console.log(uid, "here is uid")
+        // console.log(uid, "here is uid")
+        //console.log(cookies().get("user_id")?.value, "cookies waali id")
         return NextResponse.json({ res })
     } catch (error) {
         console.log(error)
@@ -26,6 +28,7 @@ export const POST = async (request: NextRequest) => {
     const user_id=cookies().get("user_id")?.value
     if (!user_id) {
         setCookies.set("user_id",uid)
+
     }
 
     try {
@@ -34,6 +37,7 @@ export const POST = async (request: NextRequest) => {
             quantity:1,
             user_id:cookies().get("user_id")?.value as string
         }).returning();
+        console.log(cookies().get("user_id")?.value as string)
         return NextResponse.json({res})
     } catch (error) {
         console.log(error,"masla")

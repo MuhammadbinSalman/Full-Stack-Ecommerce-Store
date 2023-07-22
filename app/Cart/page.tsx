@@ -3,6 +3,7 @@ import EmptyCartUI from './EmptyCartUI'
 import { Mproducts } from '../AllProducts/page'
 import { cookies } from 'next/dist/client/components/headers';
 import { data } from 'autoprefixer';
+import CartLayout from './CartLayout';
 
 
 
@@ -19,18 +20,20 @@ import { data } from 'autoprefixer';
 // };
 
 const getData = async () => {
+
   try {
-    const res = await fetch('http://127.0.0.1:3000/api/cart', {
+    const res = await fetch(`http://127.0.0.1:3000/api/cart?user_id=${cookies().get("user_id")?.value}`, {
       method: "GET",
       headers: {
         "Content-Type":"application/json"
-      }
+      },
     })
     if (!res) {
       throw new Error("Failed API")
     }
     const result = await res.json()
     console.log(result, "yeh ha")
+    return result 
   } catch (err) {
     console.log(err)
   }
@@ -38,9 +41,10 @@ const getData = async () => {
 }
 export default async function page() {
   const res = await getData()
-  // console.log(res)
+  console.log(res)
   return (
     <>
+    <CartLayout item={res}/>
     {/* {res.map((single: Mproducts) => {
       return (
           <div key={single._id}>
