@@ -3,17 +3,17 @@ import React from 'react'
 
 export default function Promotions() {
     return (
-        <div className='w-full mx-auto max-w-sm md:px-0 px-4 md:max-w-7xl py-20'>
+        <div className='w-full mx-auto xl:pl-4 lg:pl-7 px-8 lg:px-8 md:px-14 max-w-7xl py-20'>
             <p className='text-center text-sm text-blue-500 font-semibold'>PROMOTIONS</p>
             <h1 className='text-center text-4xl font-bold py-4 leading-tight'>Our Promotions Events</h1>
-            <div className='grid mt-5 grid-cols-1 md:grid-cols-4 gap-8'>
+            <div className='grid mt-5 grid-cols-1 lg:grid-cols-4 gap-8 xl:gap-8 lg:gap-4'>
                 <div className='md:col-span-2 flex flex-col gap-4 lg:gap-0 md:flex-col justify-between'>
-                    <div className='bg-[#d6d6d8] md:pl-7 w-full md:h-48 h-72 flex pt-8 md:pt-2 flex-col md:flex-row items-center justify-between gap-1 md:gap-0'>
-                        <div className=''>
+                    <div className='bg-[#d6d6d8] md:pl-7 lg:px-3 xl:pl-7 w-full md:h-48 h-72 flex pt-8 md:pt-2 flex-col md:flex-row items-center justify-between gap-1 md:gap-0'>
+                        <div>
                             <h1 className='text-3xl font-bold'>GET UP TO <span className='text-[38px]'> 60%</span></h1>
                             <h4 className='text-left text-lg font-medium'>For the summer season</h4>
                         </div>
-                        <div>
+                        <div className=''>
                             <Image width={"240"} height={"240"} alt='model picture 1' src={"/modelFemale1.webp"} />
                         </div>
                     </div>
@@ -25,7 +25,7 @@ export default function Promotions() {
                         </div>
                     </div>
                 </div>
-                <div className='px-6 w-full md:w-72 md:h-[410px] h-96 bg-[#efe1c7] pt-5 flex justify-between flex-col'>
+                <div className='px-6 w-full md:w-full lg:w-64 xl:w-72  md:h-[410px] h-96 bg-[#efe1c7] pt-5 flex justify-between flex-col'>
                     <div>
                         <h4 className='text-md font-medium'>Flex Sweatshirt</h4>
                         <h3 className='text-lg font-medium'>$100.00 <span className=' text-[20px] pl-2 font-semibold'> $75.00</span></h3>
@@ -34,7 +34,7 @@ export default function Promotions() {
                         <Image alt='male model' width={"230"} height={"230"} src={"/modelMale1.webp"} />
                     </div>
                 </div>
-                <div className='px-6 w-full md:w-72 md:h-[410px] h-96 bg-[#d7d7d9] pt-5 flex justify-between flex-col'>
+                <div className='px-6 w-full md:w-full lg:w-64 xl:w-72 md:h-[410px] h-96 bg-[#d7d7d9] pt-5 flex justify-between flex-col'>
                     <div>
                         <h4 className='text-md font-medium'>Flex Push Button Bomber</h4>
                         <h3 className='text-lg font-medium'>$225.00 <span className=' text-[20px] pl-2 font-semibold'> $190.00</span></h3>

@@ -5,6 +5,7 @@ module.exports = {
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
 	],
   theme: {
     container: {
@@ -15,6 +16,13 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        "2lg": "1150px",
+        "3lg": "1210px",
+        "2sm":"340px",
+        "3sm":"569px",
+        "4sm":"402px"
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

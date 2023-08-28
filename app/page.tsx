@@ -18,11 +18,11 @@ export default async function Home() {
   // console.log(data)
   return (
     <>
-     {/* <Hero />,
-      <Promotions />,
-       <Products />,
-      <Designer />,
-      <Newsletter />, */}
+      <Hero />
+      <Promotions />
+     <Products />,
+      <Designer />
+      <Newsletter />
     </>
   )
 }

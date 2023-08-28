@@ -8,7 +8,7 @@ import Image from 'next/image'
 // import { json } from 'stream/consumers'
 import Link from 'next/link'
 import { Mproducts } from '@/app/AllProducts/page'
-import toast, { Toaster } from 'react-hot-toast';
+// import toast, { Toaster } from 'react-hot-toast';
 
 
 export const ProductLayout: FC<{ item: any }> = ({ item }) => {
@@ -16,17 +16,17 @@ export const ProductLayout: FC<{ item: any }> = ({ item }) => {
     return (
         <>
             {item.map((single: Mproducts) => {
-                const handleAddToCart = async () => {
-                    const res = await fetch("/api/cart", {
-                        method: "POST",
-                        body: JSON.stringify({
-                            product_id: single._id
-                        })
-                    })
-                    const result = await res.json()}
+                // const handleAddToCart = async () => {
+                //     const res = await fetch("/api/cart", {
+                //         method: "POST",
+                //         body: JSON.stringify({
+                //             product_id: single._id
+                //         })
+                //     })
+                //     const result = await res.json()}
                 const productRoute = single.title.toLowerCase().replace(/ /g, "-").replace(/^-/, "");
                 return (
-                    <div key={single._id}>
+                    <div key={single._id} className='hover:scale-110 transform transition-transform duration-500 py-3'>
                         <Link
                            href={`/AllProducts/${productRoute}`}
                         >

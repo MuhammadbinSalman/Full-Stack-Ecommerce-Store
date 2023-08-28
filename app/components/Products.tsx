@@ -1,11 +1,15 @@
 'use client'
+import { client } from '@/lib/sanityClient'
+import { Image as IImage } from 'sanity'
+import { urlForImage } from '@/sanity/lib/image'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Mproducts } from '../AllProducts/page'
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -36,10 +40,31 @@ const myData: MyImages = {
     Image10: "/modelFemale8.png",
     Image11: "/modelFemale9.png",
 };
+const getProductData = async () => {
+    const res = await client.fetch(`*[_type=='product']{
+      price,
+      _id,
+      title,
+      description,
+      image,
+      category -> {name}
+    }`)
+    return res
+  }
 
 function ImageSlider() {
+    // const data: Mproducts[] = await getProductData()
+    useEffect(() => {
+        async function fetchDataAsync() {
+            const data: Mproducts[] = await getProductData()
+            console.log("useeffect ka data", data)
+        }}, [])
     return (
-        <Swiper slidesPerView={3} className="py-10 w-[1300px] h-[600px] pt-6 md:grid md:grid-cols-3 lg:grid-cols-3" breakpoints={{ 640: { slidesPerView: 3, }, 768: { slidesPerView: 3, }, }}>
+        <div className='lg:px-7 md:px-8 xl:px-6'>
+        <Swiper slidesPerView={'auto'} 
+        // "py-10 w-[1300px]  md:grid md:grid-cols-3 lg:grid-cols-3" 
+        className="h-[600px] px-8 pt-6"
+        breakpoints={{ 640: { slidesPerView: 2, }, 768: { slidesPerView: 3 }, }}>
             <SwiperSlide className='hover:scale-105 transition duration-500'>
                 <div className='w-full h-4'/>
                 <Image src={myData.Image1} alt='product' className='' height={"400"} width={"400"} />
@@ -107,6 +132,7 @@ function ImageSlider() {
                 <p className='font-bold text-xl'>$195</p>
             </SwiperSlide>
         </Swiper>
+        </div>
     );
 }
 
