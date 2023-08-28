@@ -46,6 +46,7 @@ export const POST = async (request: NextRequest) => {
     }
 }
 export const DELETE = async (request: NextRequest) => {
+    return NextResponse.json({ message: "working" })
     const req = await request.json()
     try {
         const result = await db.delete(cartTable).where(
@@ -53,7 +54,7 @@ export const DELETE = async (request: NextRequest) => {
         ).returning()
         return NextResponse.json({ messege: "Delete Request is working tho" })
     } catch (error) {
-       console.log(error, "masla")
-       return NextResponse.json({ messege: "something went wrong" })
+        console.log(error, "masla")
+        return NextResponse.json({ messege: "something went wrong" })
     }
 }
