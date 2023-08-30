@@ -14,6 +14,7 @@ const AddToCart: FC<{ item: any }> = ({ item }) => {
             {
                 item.map((single: Mproducts) => {
                     const handleAddToCart = async () => {
+                        // console.log(JSON.stringify({product_id:single.price}), "Product ID frontend")
                         const res = await fetch("/api/cart", {
                             method: "POST",
                             body: JSON.stringify({

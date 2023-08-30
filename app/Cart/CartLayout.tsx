@@ -14,6 +14,7 @@ import Image from 'next/image'
 
 function CartLayout ({items}:any) {
     const totalPrice = items.reduce((total:any, product:any) => total + product.price, 0);
+    // console.log(items, "I ki values")
     const [cartPrice, setCartPrice] = useState(totalPrice);
     const totalQuantity = items.length;
     const [cartTotal, setCartTotal] = useState(totalQuantity);
@@ -29,13 +30,13 @@ function CartLayout ({items}:any) {
                             <div key='abc'>
                                 <div className='flex max-w-7xl mx-auto lg:pr-80 justify-between py-8 w-full items-center'>
                                     <div className='flex transform duration-300 flex-col md:flex-row justify-center gap-8 items-center'>
-                                        <Image width={"180"} className='rounded-lg' height={"180"} alt='picture by sanity' src={urlForImage(i.image).url()} />
+                                        <Image width={"180"} className='rounded-lg' height={"180"} alt='picture by sanity' src={urlForImage(i.product.image).url()} />
                                         <div className='flex flex-col gap-3'>
-                                            <h1 className='text-xl text-[#212121] pb-2'>{i.title}</h1>
-                                            <h1 className='text-[16px] font-semibold text-gray-400'>{i.description}</h1>
+                                            <h1 className='text-xl text-[#212121] pb-2'>{i.product.title}</h1>
+                                            <h1 className='text-[16px] font-semibold text-gray-400'>{i.product.description}</h1>
                                             <p className='font-semibold text-base'>Delivery Estimation</p>
                                             <p className='font-semibold text-base text-yellow-400'>5 Working Days</p>
-                                            <h2 className='text-lg font-semibold text-[#212121]'>{`$${i.price}`}</h2>
+                                            <h2 className='text-lg font-semibold text-[#212121]'>{`$${i.product.price}`}</h2>
                                         </div>
                                     </div>
                                     <div className='flex gap-28 justify-between items-end flex-col'>

@@ -10,7 +10,7 @@ import Result from "postcss/lib/result";
 export const GET = async (request: NextRequest) => {
     const req = request.nextUrl
     const uid = req.searchParams.get("user_id") as string
-    console.log(uid, "uid yahan")
+    // console.log(uid, "uid yahan")
     try {
         const res = await db.select().from(cartTable).where(eq(cartTable.user_id, uid))
         // console.log(uid, "here is uid")
@@ -38,7 +38,7 @@ export const POST = async (request: NextRequest) => {
             quantity: 1,
             user_id: cookies().get("user_id")?.value as string
         }).returning();
-        console.log(cookies().get("user_id")?.value as string)
+        // console.log(cookies().get("user_id")?.value as string)
         return NextResponse.json({ res })
     } catch (error) {
         console.log(error, "masla")
@@ -46,15 +46,28 @@ export const POST = async (request: NextRequest) => {
     }
 }
 export const DELETE = async (request: NextRequest) => {
-    return NextResponse.json({ message: "working" })
-    const req = await request.json()
+    // console.log(req, "delete req")
+    const req = await request.json();
+    // return NextResponse.json({ message: "working" })
+    // console.log(req.id, "frontend se bheji wi id" )
     try {
-        const result = await db.delete(cartTable).where(
-            eq(cartTable.id, 73),
-        ).returning()
-        return NextResponse.json({ messege: "Delete Request is working tho" })
+        const deletedNames = await db.delete(cartTable)
+            .where(eq(cartTable.id, req.id))
+            .returning();
+        return NextResponse.json({ message: "working" })
     } catch (error) {
         console.log(error, "masla")
         return NextResponse.json({ messege: "something went wrong" })
     }
+    // console.log("hello", req)
+    // return NextResponse.json({ message: "working" })
+    // try {
+    // const res = await db.delete(cartTable).where(
+    //     eq(cartTable.id, 74),
+    // ).returning()
+    // return NextResponse.json({ message: "working" })
+    // } catch (error) {
+    //     console.log(error, "masla")
+    //     return NextResponse.json({ messege: "something went wrong" })
+    // }
 }

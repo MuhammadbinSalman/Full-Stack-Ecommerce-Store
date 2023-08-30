@@ -1,3 +1,4 @@
+"use client"
 import { Input } from '@/components/ui/input'
 import Link from 'next/link'
 import React from 'react'
@@ -70,10 +71,10 @@ function Links() {
     )
 }
 
-export default async function Navbar() {
-    const res: { res: Dbproducts[] } = await getData()
+export default function Navbar() {
+    const res: { res: Dbproducts[] } = getData()
     console.log("res yeh", res)
-    const totalQuantity = res.res.length;
+    // const totalQuantity = res.res.length;
     // const [cartTotal, setCartTotal] = useState(totalQuantity);
     return (
         <nav className="flex w-full mx-auto md:px-9 xl:px-4 px-4 max-w-7xl justify-between py-9 items-center">
@@ -119,7 +120,7 @@ export default async function Navbar() {
                                 <TooltipTrigger><Link href="/Cart">
                                     <div className='relative mt-64 md:mt-0'>
                                         <BiCart size={"43"} className='p-1 hover:scale-125 active::scale-150 transition duration-500 border-4 border-gray-100 bg-gray-100 rounded-full' />
-                                        <div className='bg-red-500 rounded-full h-4 w-4 absolute top-0 right-1 text-[10px] pb-1 text-gray-100 flex justify-center items-start font-semibold'>{totalQuantity}</div>
+                                        <div className='bg-red-500 rounded-full h-4 w-4 absolute top-0 right-1 text-[10px] pb-1 text-gray-100 flex justify-center items-start font-semibold'>2</div>
                                     </div>
                                 </Link></TooltipTrigger>
                                 <TooltipContent>

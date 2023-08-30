@@ -34,7 +34,7 @@ const getData = async () => {
 
 export default async function page() {
   const res:{res:Dbproducts[]} = await getData()
-  console.log(res, "res here");
+  // console.log(res, "res here");
   
   const getProductData = async () => {
       const red = await client.fetch(`*[_type=='product' && _id in $productIds]{
@@ -48,11 +48,16 @@ export default async function page() {
       return red
   }
   const data = await getProductData()
-  console.log(data, "sanity data")
+  const combinedObjects = res.res.map((cartItem) => ({
+    ...cartItem,
+    product: data.find((prod:any) => prod._id === cartItem.product_id)
+  }));
+  console.log(combinedObjects, "full fledge array");
+  // console.log(data, "sanity data")
   // console.log(res, "DB data check krlo")
   return (
     <div> 
-      <CartLayout items={data}/>
+      <CartLayout items={combinedObjects}/>
     </div>
   )
 }

@@ -23,7 +23,7 @@ const ProductCheckout: React.FC<ProductCheckoutProps> = ({ prods }) => {
     const data = await response.json();
     if (data.session) {
       console.log("File: Checkout.tsx:17 ~ handleCheckout ~ response:", data.session);
-      // stripePromise.redirectToCheckout({sessionId:data.session.id})
+      stripePromise.redirectToCheckout({sessionId:data.session.id})
     }
   }
   return (
