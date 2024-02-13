@@ -1,5 +1,7 @@
-Here is the live link [online-store](https://online-store-mbs.vercel.app/)
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Full Stack Next.js E-Commerce
+### This repository contains the code for the Full Stack Next.js E-Commerce project, developed as part of a Hackathon challenge. The project is a full-stack e-commerce application built with Next.js, Tailwind CSS, and Shadcn UI.
+
+Here is the live link (there were some issue in deployment on vercel that's why its not live right now, I'll fix it soon) [online-store](https://online-store-mbs.vercel.app/)
 
 ## Getting Started
 
